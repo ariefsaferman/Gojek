@@ -173,11 +173,60 @@ class _HomeState extends State<Home> {
               ],
             ),
             Container(
+              padding: EdgeInsets.all(10),
               height: 90,
               width: 150,
               decoration: BoxDecoration(
                 color: MyColors.white, 
                 borderRadius: BorderRadius.circular(20)
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        height: 16,
+                        width: 18,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage('https://i.playboard.app/p/AATXAJxgYALqQCC9e1RxWaRYiG9h9XO2J_sKgWJDZSif/default.jpg')
+                            ),
+                        ),
+                      ),
+                      SizedBox(width: 3,),
+                      Container(
+                        child: Text(
+                          "Gopay", 
+                          style: TextStyle(
+                            color: MyColors.blackText, 
+                            fontSize: MyFontSize.large1, 
+                            fontWeight: FontWeight.bold, 
+                          ),
+                        ),
+                      ),  
+                      
+                    ],
+                  ), 
+                  SizedBox(width: 8,), 
+                   Text(
+                        "Rp1.000", 
+                        style: TextStyle(
+                          color: MyColors.blackText, 
+                          fontSize: MyFontSize.medium1,
+                        ),
+                      ),
+                  SizedBox(width: 5,), 
+                  Text(
+                    "Tap for history ", 
+                    style: TextStyle(
+                      color: MyColors.green,
+                      fontSize: MyFontSize.medium1, 
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
+                ],
               ),
             ), 
             SizedBox(width: 5,),
@@ -191,7 +240,30 @@ class _HomeState extends State<Home> {
                 width: 33,
                 isBold: true,
               ),
-            )
+            ), 
+            Expanded(
+              child: CustomButtonIcon(
+                action: () {},
+                iconPath: "assets/images/ic_topup.png",
+                text: "Top Up",
+                fontColor: MyColors.white,
+                height: 33,
+                width: 33,
+                isBold: true,
+              ),
+            ),
+            Expanded(
+              child: CustomButtonIcon(
+                action: () {},
+                iconPath: "assets/images/ic_eksplor.png",
+                text: "Explore",
+                fontColor: MyColors.white,
+                height: 33,
+                width: 33,
+                isBold: true,
+              ),
+            ),
+            SizedBox(width: 10,), 
           ],
         ),
       );

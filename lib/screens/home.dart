@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gojek/common/MyColors.dart';
 import 'package:gojek/common/MyFontSize.dart';
+import 'package:gojek/widgets/custom_button_icon.dart';
 
 class Home extends StatefulWidget {
   const Home({ Key? key }) : super(key: key);
@@ -14,6 +15,7 @@ class _HomeState extends State<Home> {
   List<bool> tabBarBadgetList = [false, false, false, true];
   List tabBarList = ["Home", "Promo", "Orders", "Chat"];
   int tabBarIndex = 0;
+  int balance = 0; 
 
   @override
   Widget build(BuildContext context) {
@@ -150,30 +152,44 @@ class _HomeState extends State<Home> {
         margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
         height: 150,
         decoration: BoxDecoration(
-          color: MyColors.green,
+          color: MyColors.blue,
           borderRadius: BorderRadius.circular(30)
         ),
         child: Row(
           children: [
             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ... List.generate(2, (index) => Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-              height: 20,
+                  margin: EdgeInsets.symmetric(horizontal: 13, vertical: 5),
+              height: 18,
               width: 5,
               decoration: BoxDecoration(
-                color: MyColors.softGrey, 
+                // ignore: unrelated_type_equality_checks
+                color: (balance == index) ? MyColors.white : MyColors.softGrey, 
                 borderRadius: BorderRadius.circular(20)
               ),
             ), )
               ],
             ),
             Container(
-              height: 110,
-              width: 180,
+              height: 90,
+              width: 150,
               decoration: BoxDecoration(
                 color: MyColors.white, 
                 borderRadius: BorderRadius.circular(20)
+              ),
+            ), 
+            SizedBox(width: 5,),
+            Expanded(
+              child: CustomButtonIcon(
+                action: () {},
+                iconPath: "assets/images/ic_bayar.png",
+                text: "Pay",
+                fontColor: MyColors.white,
+                height: 33,
+                width: 33,
+                isBold: true,
               ),
             )
           ],

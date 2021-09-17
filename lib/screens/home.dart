@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gojek/common/MyColors.dart';
 import 'package:gojek/common/MyFontSize.dart';
+import 'package:gojek/widgets/card_goclub.dart';
 import 'package:gojek/widgets/custom_button_icon.dart';
 
 class Home extends StatefulWidget {
@@ -279,6 +280,12 @@ class _HomeState extends State<Home> {
         children: [
           searchBox(),
           balance(),
+          SizedBox(height: 20,), 
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: CardGoClub(),
+          )
+          
         ],
       ),
     );

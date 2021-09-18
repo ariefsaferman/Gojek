@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gojek/common/MyColors.dart';
-import 'package:gojek/common/MyFontSize.dart';
+import 'package:gojek/common/my_style.dart';
 import 'package:gojek/widgets/custom_card.dart';
 
 class CardGoClub extends StatelessWidget {
@@ -14,7 +14,52 @@ class CardGoClub extends StatelessWidget {
       shadow: true,
       shadowOpacity: .5,
       child: Row(
-        
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/ic_indoclub.png", 
+                      height: 30,
+                      width: 30,
+                    ),
+                    SizedBox(width: 5,), 
+                    Expanded(
+                      child: Text(
+                        "goclub", 
+                        style: MyStyle.textTitleBlack,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 3,), 
+                Text(
+                  "Our new loyalty program", 
+                  style: MyStyle.textParagraphBlack,
+                  
+                  
+                )
+              ],
+            ),
+          ),
+          SizedBox(width: 10,), 
+          CustomCard(
+            onTap: () {},
+            padding: EdgeInsets.zero,
+            bgColor: MyColors.green,
+            shadow: false,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Text(
+                "Join for free", 
+                style: MyStyle.textButtomWhite,
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
